@@ -10,7 +10,10 @@
   "author": "Sabbir Rahman Sakib",
   "license": "ISC",
   "dependencies": {
+    "browser-sync": "^2.9.12",
     "ejs": "^2.3.4",
-    "express": "^4.13.3"
+    "express": "^4.13.3",
+    "gulp": "^3.9.0",
+    "gulp-live-server": "0.0.29"
   }
 }
