@@ -1,9 +1,9 @@
 // gen random string
 var guid = require('guid');
 var listeners = {};
-modeule.exports = {
+module.exports = {
 	register: function(cb){
-		var id = guid.raw(),
+		var id = guid.raw();
 		listeners[id] = cb;
 		return id;
 	},
