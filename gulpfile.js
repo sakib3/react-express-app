@@ -31,8 +31,8 @@ gulp.task('bundle', function(){
 })
 
 
-//new task where serve is dependent on live-server i.e. run before it...
-gulp.task('serve',['live-server'],function(){
+//new task where serve is dependent on bundle and live-server i.e. run before it...
+gulp.task('serve',['bundle','live-server'],function(){
 	browserSync.init(null,{
 		proxy: "http://localhost:3000",
 		port:7000

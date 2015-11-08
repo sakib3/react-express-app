@@ -46,4 +46,17 @@ npm install --save reactify browserify
 Now we need:
 npm install --save vinyl-source-stream
 ---------------------------
+Chnage the file and 
+Then run: gulp bundle 
+which will out put the jsx to js and import this new file to app
+and run
+gulp serve
+___________________________
 
+Create components folder inside app folder
+it is a specific module.....
+and 
+touch app/components/GroceryItemList.jsx
+---------------------------
+
+_________________________

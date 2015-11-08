@@ -17,6 +17,7 @@
     "gulp": "^3.9.0",
     "gulp-live-server": "0.0.29",
     "react": "^0.14.2",
+    "react-dom": "^0.14.2",
     "reactify": "^1.1.1",
     "vinyl-source-stream": "^1.1.0"
   }
