@@ -36,3 +36,14 @@ bower install --save react
 npm install -g react-tools  (JSX command line tool)
 
 ---------------------------
+Install browserify: <needed to convert the jsx into js so that browser can understand>
+npm install -g browserify
+
+<Now we need to install reactify and browserify locally>
+<take a backend app and visible into frontend>
+npm install --save reactify browserify
+
+Now we need:
+npm install --save vinyl-source-stream
+---------------------------
+
