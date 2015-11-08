@@ -13,7 +13,7 @@ gulp.task('live-server',function(){
 //new task where serve is dependent on live-server i.e. run before it...
 gulp.task('serve',['live-server'],function(){
 	browserSync.init(null,{
-		proxy: "http://localhost:1971",
-		port:1987
+		proxy: "http://localhost:3000",
+		port:7000
 	})
 })

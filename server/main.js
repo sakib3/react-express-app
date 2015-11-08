@@ -3,4 +3,6 @@ var app = new express();
 app.get('/',function(req,res){
 	res.render('./../app/index.ejs',{});
 })
-.listen(1971);
+//serve all contents of app folder
+.use(express.static(__dirname+'/../app'))
+.listen(3000);

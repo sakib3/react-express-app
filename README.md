@@ -29,3 +29,10 @@ npm install --save gulp gulp-live-server
 Then install: npm install --save browser-sync
 
 Then edit gulp.js and RUN gulp serve
+---------------------------
+Install REACT:
+npm install --save react
+bower install --save react
+npm install -g react-tools  (JSX command line tool)
+
+---------------------------
