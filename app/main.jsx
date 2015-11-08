@@ -4,12 +4,15 @@ var React = require('react/addons');
 console.log('main.jsx file');
 
 var GroceryItemList =require('./components/GroceryItemList.jsx');
+var groceryItemStore =require('./stores/GroceryItemStore.jsx');
 
-var initial = [
-	{name: "Candy"},
-	{name: "Milk"},
-	{name: "Sandwitch",purchased:true},
-	{name: "Drinks"}
-];
+var initial = groceryItemStore.getItems();
 // render this item list into the app....
-React.render(<GroceryItemList items={initial}/>,app)
+function render(){
+	React.render(<GroceryItemList items={initial}/>,app);
+}
+groceryItemStore.onChange(function(items){
+	initial = items;
+	render();
+});
+render();

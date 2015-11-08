@@ -1,7 +1,13 @@
 var dispatcher = require('./../dispatcher.js');
 
 function GroceryItemStore(){
-	var items = [];
+	
+	var items = [
+		{name: "Candy"},
+		{name: "Milk"},
+		{name: "Sandwitch",purchased:true},
+		{name: "Drinks"}
+	];
 	var listeners = [];
 	function getItems(){
 		return items;
@@ -12,11 +18,14 @@ function GroceryItemStore(){
 
 
 	function triggerListeners(){
-		changeListeners.forEach(function(listener){
-			listener(groceryItems);
+		listeners.forEach(function(listener){
+			listener(items);
 		})
 	}
-
+	function addGroceryItem(item){
+		items.push(item);
+		triggerListeners();
+	}
 	dispatcher.register(function(event){
 		var split =event.type.split(':');
 		if(split[0] ==='grocery-item'){
@@ -27,7 +36,7 @@ function GroceryItemStore(){
 			}
 		}
 	});
-
+	//public interface....
 	return {
 		getItems: getItems,
 		onChange: onChange
