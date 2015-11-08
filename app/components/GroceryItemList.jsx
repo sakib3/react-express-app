@@ -1,6 +1,6 @@
 // browserify handle this react dependency
 var React = require('react/addons');
-var ReactDOM = require('react-dom');
+//var ReactDOM = require('react-dom');
 
 // make it availbale for other file
 module.exports = React.createClass({
@@ -8,6 +8,15 @@ module.exports = React.createClass({
 		return (
 			<div>
 				<h1>Grocery listify</h1>
+				<div>
+				{
+					this.props.items.map(function(item,index){
+						return (
+							<div>{item.name}</div>
+						)
+					})
+				}
+				</div>	
 			</div>
 		)
 	}
