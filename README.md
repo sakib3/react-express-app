@@ -64,3 +64,6 @@ install guid , tool for gen random string:
 npm install --save guid
 
 _________________________
+
+Install skeleton and addd into file:
+bower install --save skeleton
