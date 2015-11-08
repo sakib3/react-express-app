@@ -58,5 +58,9 @@ it is a specific module.....
 and 
 touch app/components/GroceryItemList.jsx
 ---------------------------
+touch app/dispatcher.js
+
+install guid , tool for gen random string:
+npm install --save guid
 
 _________________________
