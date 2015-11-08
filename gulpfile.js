@@ -18,7 +18,7 @@ gulp.task('live-server',function(){
 })
 
 // jsx to js conversion.....
-gulp.task('bundle', function(){
+gulp.task('bundle',['copy'], function(){
 	return browserify({
 		// starting point grab the file
 		entries: 'app/main.jsx',
@@ -30,7 +30,11 @@ gulp.task('bundle', function(){
 	.pipe(gulp.dest('./.tmp')); //destination folder
 })
 
-
+//copy css files
+gulp.task('copy',function(){
+	gulp.src(['app/*.css'])
+	.pipe(gulp.dest('./.tmp'));
+})
 //new task where serve is dependent on bundle and live-server i.e. run before it...
 gulp.task('serve',['bundle','live-server'],function(){
 	browserSync.init(null,{
