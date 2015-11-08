@@ -26,6 +26,17 @@ function GroceryItemStore(){
 		items.push(item);
 		triggerListeners();
 	}
+	function deleteGroceryItem(item){
+		var index;
+		items.filter(function(_item,_index){
+			if(_item.name == item.name){
+				index = _index;
+			}
+		})
+		
+		items.splice(index,1);
+		triggerListeners();
+	}
 	dispatcher.register(function(event){
 		var split =event.type.split(':');
 		if(split[0] ==='grocery-item'){
@@ -33,8 +44,12 @@ function GroceryItemStore(){
 				case "add":
 				addGroceryItem(event.payload);
 				break;
+				case "delete":
+				deleteGroceryItem(event.payload);
+				break;
 			}
 		}
+
 	});
 	//public interface....
 	return {
