@@ -13,7 +13,7 @@ var reactify = require('reactify');
 // gup task : gulp live-server
 // whenever we change main.js it will restart the server
 gulp.task('live-server',function(){
-	var server = new LiveServer('server/main.js');
+	var server = new LiveServer('bin/www');
 	server.start();
 })
 
@@ -38,7 +38,7 @@ gulp.task('copy',function(){
 //new task where serve is dependent on bundle and live-server i.e. run before it...
 gulp.task('serve',['bundle','live-server'],function(){
 	browserSync.init(null,{
-		proxy: "http://localhost:3000",
+		proxy: "http://localhost:3007",
 		port:7000
 	})
 })
