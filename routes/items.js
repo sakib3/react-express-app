@@ -9,14 +9,27 @@ var GroceryItem = require('./../models/GroceryItem.js');
 // ];
 
 /* GET items listing. */
-router
-.get('/', function(req, res) {
-	GroceryItem.find(function(error, doc){
-  		res.send(doc);
-		
+router.patch('/:id',function(req, res,next) {
+	GroceryItem.findOne({
+		_id:req.body._id
+	},function(error,doc){
+		for(var key in req.body){
+			doc[key] = req.body[key];
+		}
+		doc.save();
+		res.status(200).send();
 	})
-})
-.post('/', function(req, res) {
+});
+
+router.delete('/:id', function(req, res,next) {
+	GroceryItem.findOne({
+		_id:req.params.id
+	}).remove(function(x){
+		console.log("removed .",x);
+	});
+});
+
+router.post('/', function(req, res,next) {
   var item = req.body;
   var groceryItem = new GroceryItem(item);
   groceryItem.save(function(err,data){
@@ -24,6 +37,13 @@ router
   	res.status(300).send();
   	
   })
+});
+
+router.get('/', function(req, res,next) {
+	GroceryItem.find(function(error, doc){
+  		res.send(doc);
+		
+	})
 });
 
 

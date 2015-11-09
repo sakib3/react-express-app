@@ -26,5 +26,32 @@ module.exports = {
 			})
 
 		})
+	},
+	patch: function(url,data){
+		// available in ECMA script 5/6
+		return new Promise(function(success, error){
+			$.ajax({
+				url: url,
+				//dataType: "json",
+				type: "PATCH",
+				data: data,
+				success: success,
+				error: error
+			})
+
+		})
+	},
+	del: function(url){
+		// available in ECMA script 5/6
+		return new Promise(function(success, error){
+			$.ajax({
+				url: url,
+				//dataType: "json",
+				type: "DELETE",
+				success: success,
+				error: error
+			})
+
+		})
 	}
 }
